@@ -1,4 +1,7 @@
 import { menu, type MenuItem, type MenuPrice } from '../data/menu'
+import { useRef, useEffect, useState } from 'react'
+import { setJumpTo } from '../store/menuNavSlice'
+import { useAppDispatch, useAppSelector } from '../store/hooks'
 
 function formatMoney(amount: number) {
   return new Intl.NumberFormat('en-US', {
@@ -37,13 +40,63 @@ function MenuItemRow({ item }: { item: MenuItem }) {
 }
 
 export function MenuPage() {
+  const dispatch = useAppDispatch()
+  const jumpTo = useAppSelector((s) => s.menuNav.jumpTo)
+  const [didInit, setDidInit] = useState(false)
+
+  const menuJumpSelect = useRef<HTMLSelectElement | null>(null)
+  const menuStickyRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (didInit) return
+    setDidInit(true)
+    if (jumpTo) return
+    const firstId = menu.sections[0]?.id ?? ''
+    if (firstId) dispatch(setJumpTo(firstId))
+  }, [didInit, dispatch, jumpTo])
+
+  useEffect(() => {
+    const el = menuStickyRef.current
+    if (!el) return
+
+    const root = document.documentElement
+    const set = () => {
+      const h = Math.ceil(el.getBoundingClientRect().height)
+      root.style.setProperty('--menu-sticky-h', `${h}px`)
+    }
+
+    set()
+    if (typeof ResizeObserver === 'undefined') return
+    const ro = new ResizeObserver(() => set())
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
+  function scrollIntoSection(sectionId: string) {
+    const el = document.getElementById(sectionId)
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  useEffect(() => {
+    if (!jumpTo) return
+    scrollIntoSection(jumpTo)
+  }, [jumpTo])
+
+  function handleMenuSectionChange() {
+    const sect = menuJumpSelect.current?.value
+
+    if (!sect) return
+    dispatch(setJumpTo(sect))
+    scrollIntoSection(sect)
+  }
+
   return (
-    <main className="section">
-      <div className="menuSticky" aria-label="Menu page header">
+    <main className="menuPage">
+      <div className="menuSticky" aria-label="Menu page header" ref={menuStickyRef}>
         <div className="container">
           <div className="menuHeader">
             <div>
-              <h1>Menu</h1>
+              {/* <h1>Menu</h1> */}
               {/* <p className="muted">Tap a category to jump.</p> */}
             </div>
             <div className="menuHeader__meta muted">
@@ -52,11 +105,30 @@ export function MenuPage() {
           </div>
         </div>
 
-        <div className="menuNavBand" aria-label="Menu categories">
+        <div className="menuNavBand"  style={{display:'flex', flexDirection: 'column', background:'white'}} aria-label="Menu categories">
           <div className="container">
+            <div className="menuJump" aria-label="Jump to a menu section">
+              <label className="menuJump__label" style={{color:'black'}} htmlFor="menuJump">
+                Jump to:
+              </label>
+              <select ref={menuJumpSelect} className="menuJump__select" value={jumpTo} onChange={handleMenuSectionChange}>
+                <option value="">Select a section…</option>
+                {menu.sections.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.title}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             <nav className="menuNav">
               {menu.sections.map((s) => (
-                <a key={s.id} className="menuNav__chip" href={`#${s.id}`}>
+                <a
+                  key={s.id}
+                  className="menuNav__chip"
+                  href={`#${s.id}`}
+                  onClick={() => dispatch(setJumpTo(s.id))}
+                >
                   {s.title}
                 </a>
               ))}
@@ -70,7 +142,7 @@ export function MenuPage() {
           <section key={section.id} id={section.id} className="menuSection">
             <div className="menuSection__header">
               <h2>{section.title}</h2>
-              {section.note ? <p className="muted">{section.note}</p> : null}
+              {section.note ? <p style={{background:'white', padding:'6px'}}>{section.note}</p> : null}
             </div>
 
             {section.items.length ? (

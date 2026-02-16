@@ -1,11 +1,43 @@
 export function EventsPage() {
+  const facebookPageUrl = 'https://www.facebook.com/profile.php?id=61554632729226'
+  const facebookPluginSrc =
+    'https://www.facebook.com/plugins/page.php' +
+    `?href=${encodeURIComponent(facebookPageUrl)}` +
+    '&tabs=events' +
+    '&width=500' +
+    '&height=650' +
+    '&small_header=true' +
+    '&adapt_container_width=true' +
+    '&hide_cover=false' +
+    '&show_facepile=false'
+
   return (
     <main className="section">
       <div className="container">
-        <h1>Events</h1>
-        <p className="muted">
-          Scaffold page. Next step: replicate the current calendar behavior (or
-          replace with a cleaner list + optional calendar view).
+        <div className="section__header">
+          <h1>Upcoming Events</h1>
+          <p className="muted">See what’s coming up at King Seat Tavern.</p>
+        </div>
+
+        <div className="fbEmbed" aria-label="Facebook events embed">
+          <iframe
+            title="King Seat Tavern events on Facebook"
+            src={facebookPluginSrc}
+            width="500"
+            height="650"
+            style={{ border: 'none', overflow: 'hidden' }}
+            scrolling="no"
+            frameBorder={0}
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+
+        <p className="muted" style={{ marginTop: 12 }}>
+          <a className="link" href={facebookPageUrl} target="_blank" rel="noreferrer">
+            View all events on Facebook
+          </a>
+          .
         </p>
       </div>
     </main>

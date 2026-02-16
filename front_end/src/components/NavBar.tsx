@@ -1,11 +1,12 @@
 import { useEffect, useId, useRef, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import ksLogo from '../assets/KSLogo.jpg'
 
 const navItems = [
   { to: '/', label: 'Home' },
   { to: '/menu', label: 'Menu' },
-  { to: '/order-online', label: 'Order Online' },
+  { to: '/order-online', label: 'Order' },
+  { to: '/events', label: 'Events' },
   { to: '/bands', label: 'Bands' },
 ] as const
 
@@ -13,6 +14,35 @@ export function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const drawerId = useId()
   const closeBtnRef = useRef<HTMLAnchorElement | null>(null)
+  const headerRef = useRef<HTMLElement | null>(null)
+  const { pathname } = useLocation()
+
+  const pageTitle = (() => {
+    if (pathname === '/' || pathname === '') return 'HOME'
+    if (pathname.startsWith('/menu')) return 'MENU'
+    if (pathname.startsWith('/order-online')) return 'ORDER ONLINE'
+    if (pathname.startsWith('/events')) return 'EVENTS'
+    if (pathname.startsWith('/bands')) return 'BANDS'
+    if (pathname.startsWith('/contact')) return 'CONTACT'
+    return 'PAGE'
+  })()
+
+  useEffect(() => {
+    const el = headerRef.current
+    if (!el) return
+
+    const root = document.documentElement
+    const set = () => {
+      const h = Math.ceil(el.getBoundingClientRect().height)
+      root.style.setProperty('--nav-real-h', `${h}px`)
+    }
+
+    set()
+    if (typeof ResizeObserver === 'undefined') return
+    const ro = new ResizeObserver(() => set())
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
 
   useEffect(() => {
     if (!drawerOpen) return
@@ -37,8 +67,13 @@ export function NavBar() {
   }, [drawerOpen])
 
   return (
-    <header className="nav">
+    <header className="nav" ref={headerRef}>
       <div className="container nav__inner">
+        <div className="nav__center" aria-label={`Current page ${pageTitle}`}>
+          <div className="nav__siteTitle">King Seat Tavern</div>
+          <h1 className="nav__pageTitle" style={{fontSize: '1.4rem'}}>{pageTitle}</h1>
+        </div>
+
         <NavLink to="/" className="brand" aria-label="King Seat Tavern">
           <span className="brand__mark" aria-hidden="true">
             <img className="brand__logo" src={ksLogo} alt="" />
@@ -62,9 +97,9 @@ export function NavBar() {
         </nav>
 
         <div className="nav__actions">
-          <a className="nav__cta" href="tel:7243927560">
+          {/* <a className="nav__cta" href="tel:7243927506">
             Call
-          </a>
+          </a> */}
 
           <button
             type="button"
@@ -156,8 +191,8 @@ export function NavBar() {
               ))}
             </nav>
 
-            <a className="navDrawer__cta" href="tel:7243927560" onClick={() => setDrawerOpen(false)}>
-              Call 724-392-7560
+            <a className="navDrawer__cta" href="tel:7243927506" onClick={() => setDrawerOpen(false)}>
+              Call 724-392-7506
             </a>
           </div>
         </div>
