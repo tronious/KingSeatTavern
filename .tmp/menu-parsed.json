@@ -1,0 +1,897 @@
+[
+  {
+    "index": 0,
+    "title": "Appetizers",
+    "items": [
+      {
+        "id": "bavarian-pretzel-rods",
+        "name": "Bavarian Pretzel Rods",
+        "description": "Served with beer cheese",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 10,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "portobello-mushrooms",
+        "name": "Portobello Mushrooms",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 6.5,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "crispy-chicken-tenders",
+        "name": "crispy chicken tenders",
+        "description": "Served with choice of fries or tots",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 13,
+            "currency": "USD"
+          }
+        },
+        "notes": [
+          "Upgrade to onion rings for $2.00"
+        ]
+      },
+      {
+        "id": "cheese-sticks",
+        "name": "Cheese Sticks",
+        "description": "Served with marinara",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 7.5,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "tater-tots",
+        "name": "Tater Tots",
+        "description": "Upgrade to loaded tots with bacon and choice of nacho or beer cheese for $4.00",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 6,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "fried-pickles",
+        "name": "Fried pickles",
+        "description": "Served with pickle sauce",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 7.5,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "hot-pepper-cheese-balls",
+        "name": "Hot Pepper cheese balls",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 8,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "basket-of-fries",
+        "name": "Basket of fries",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 6,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "onion-rings",
+        "name": "onion rings",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 7.5,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "veggie-egg-rolls-2",
+        "name": "Veggie egg rolls (2)",
+        "description": "Served with choice of honey garlic teriyaki or sweet chili sauce",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 7,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "signature-chips",
+        "name": "Signature chips",
+        "description": "Plain or dusted",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 6,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "fried-dough-bites",
+        "name": "Fried dough bites",
+        "description": "Choice or garlic butter or cinnamon",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 6,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 11,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "title": "SOUP & SALAD",
+    "items": [
+      {
+        "id": "kings-garden-salad",
+        "name": "kings garden salad",
+        "description": "Lettuce, tomato, onion, banana peppers, hard-boiled egg & cucumbers",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 8,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "chicken-salad",
+        "name": "chicken salad",
+        "description": "Lettuce, tomato, onion, banana peppers, hard-boiled egg, mixed cheese & fries. Choice of grilled or crispy chicken",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 15,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "sirloin-strip-steak-salad",
+        "name": "SIRLOIN STRIP STEAK SALAD",
+        "description": "Lettuce, tomato, onion, banana peppers, hard-boiled egg, mixed cheese & fries",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 17,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "italian-salad",
+        "name": "ITALIAN SALAD",
+        "description": "Lettuce, tomato, onion, ham, capicola, salami, pepperoni, provolone cheese, italian dressing",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 15,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "italian-salad-2",
+        "name": "ITALIAN SALAD",
+        "description": "Lettuce, tomato, onion, ham, capicola, salami, pepperoni, provolone cheese, italian dressing",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 15,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "dressing",
+        "name": "DRESSING",
+        "description": "Italian, balsamic, ranch, blue cheese, thousand island, honey mustard & cucumber/wasabi (+ $2.00)"
+      },
+      {
+        "id": "soup",
+        "name": "SOUP",
+        "description": "Cup $4.00 / Bowl $7.00 / Quart $13.00"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "title": "TRADITIONAL PIES",
+    "note": "Add a description about this category",
+    "items": [
+      {
+        "id": "small-8",
+        "name": "SMALL (8)",
+        "description": "Pepperoni, Sausage, Bacon, Meatballs, Ground Beef, Green Peppers, Mushrooms, Black Olives, Jalapenos, Onions, Pickles, Tomato & Banana Peppers. $2.00 each.",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 13,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "large-12",
+        "name": "LARGE (12)",
+        "description": "Pepperoni, Sausage, Bacon, Meatballs, Ground Beef, Green Peppers, Mushrooms, Black Olives, Jalapenos, Onions, Pickles, Tomato & Banana Peppers. $3.00 each.",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 16,
+            "currency": "USD"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "title": "SPECIAL PIES",
+    "note": "Add a description about this category",
+    "items": [
+      {
+        "id": "king-mac",
+        "name": "King Mac",
+        "description": "Thousand Island base, ground meat, onions, American cheese, cheddar cheese, pickles & lettuce",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 19,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 22,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "philly",
+        "name": "PHILLY",
+        "description": "Fried mushrooms, onions, green peppers, provolone cheese, choice of shredded chicken or steak & choice of garlic butter or ranch base",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 19,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 22,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "diablo",
+        "name": "DIABLO",
+        "description": "Pizza sauce, pepperoni, jalapeno bacon, jalapenos, banana peppers, hot sauce, pizza cheese & hot pepper cheese",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 21,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 25,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "chicken-bacon-ranch",
+        "name": "CHICKEN BACON RANCH",
+        "description": "Ranch base, bacon & mixed cheese",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 19,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 22,
+                "currency": "USD"
+              }
+            }
+          ]
+        },
+        "notes": [
+          "Choice of crispy or grilled chicken"
+        ]
+      },
+      {
+        "id": "buffalo-chicken",
+        "name": "BUFFALO CHICKEN",
+        "description": "Buffalo base, mixed cheese, French fries, choice of grilled or crispy chicken & choice of ranch or blue cheese drizzle",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 19,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 22,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "white",
+        "name": "WHITE",
+        "description": "Garlic butter base, sliced tomatoes & pizza cheese",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 17,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 20,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "taco",
+        "name": "TACO",
+        "description": "Lettuce, tomato, onion, ground beef, mixed cheese, sour cream & taco sauce. Choice of taco sauce or nacho cheese base",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 19,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 22,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "pickle",
+        "name": "PICKLE",
+        "description": "Lettuce, tomato, onion, ground beef, mixed cheese, sour cream & taco sauce. Choice of taco sauce or nacho cheese base",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 15,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 19,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "title": "SANDWICHES, WRAPS & HOAGIES",
+    "note": "SERVED WITH HOUSE CHIPS. UPGRADE TO FRIES OR TOTS FOR $2.00. UPGRADE TO ONION RINGS, SOUP CUP, OR SIDE SALAD FOR $3.00.",
+    "items": [
+      {
+        "id": "italian-stallion-available-as-wrap-or-hoagie",
+        "name": "ITALIAN STALLION (AVAILABLE AS WRAP OR HOAGIE)",
+        "description": "Ham, capicola, salami, pepperoni, provolone cheese, lettuce, tomato, onion & Italian dressing",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 11,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 17,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "reuben-available-as-wrap-or-sandwich",
+        "name": "REUBEN (AVAILABLE AS WRAP OR SANDWICH)",
+        "description": "Corned beef, Swiss cheese, sauerkraut & thousand island dressing",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 15,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "the-big-meatballer-available-as-hoagie",
+        "name": "THE BIG MEATBALLER (AVAILABLE AS HOAGIE)",
+        "description": "Sauce, pizza cheese & meatballs",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 11,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 17,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "the-chicken-philly-available-as-wrap-or-hoagie",
+        "name": "THE CHICKEN PHILLY (AVAILABLE AS WRAP OR HOAGIE)",
+        "description": "Shredded chicken, fried mushrooms, onions, green peppers & provolone cheese",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 13,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 18,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "the-steak-philly-available-as-wrap-or-hoagie",
+        "name": "THE STEAK PHILLY (AVAILABLE AS WRAP OR HOAGIE)",
+        "description": "Shredded chicken, fried mushrooms, onions, green peppers & provolone cheese",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 15,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 20,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "chicken-bacon-ranch-available-as-wrap-or-hoagie",
+        "name": "CHICKEN BACON RANCH (AVAILABLE AS WRAP OR HOAGIE)",
+        "description": "Lettuce, tomato, bacon, provolone cheese & ranch",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 14,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 19,
+                "currency": "USD"
+              }
+            }
+          ]
+        },
+        "notes": [
+          "Choice of crispy or grilled chicken"
+        ]
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "title": "Burgers",
+    "note": "SERVED WITH HOUSE CHIPS. UPGRADE TO FRIES OR TOTS FOR $2.00. UPGRADE TO ONION RINGS, SOUP CUP, OR SIDE SALAD FOR $3.00. KETO OPTIONS AVAILABLE.",
+    "items": [
+      {
+        "id": "the-big-cheese",
+        "name": "The Big Cheese",
+        "description": "Lettuce, tomato, onion & choice of cheese",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 13,
+            "currency": "USD"
+          }
+        },
+        "notes": [
+          "Add bacon: $2.00"
+        ]
+      },
+      {
+        "id": "swiss-and-shrooms",
+        "name": "Swiss & Shrooms",
+        "description": "Sauteed mushrooms, swiss cheese & fried portobello mushrooms",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 15,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "western",
+        "name": "WESTERN",
+        "description": "Bacon, cheddar cheese & onion rings",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 15,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "jalapeno-cheddar",
+        "name": "JALAPENO CHEDDAR",
+        "description": "Fried Jalapenos, hot pepper cheese, jalapeno bacon & sweet red chili sauce",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 15,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "diablo",
+        "name": "DIABLO",
+        "description": "Lettuce, tomato, onion, hot pepper cheese, jalapeno bacon, jalapenos & reaper mayo",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 15,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "pb-and-j",
+        "name": "PB & J",
+        "description": "Lettuce, tomato, onion, American cheese, peanut butter & strawberry jelly",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 15,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "wakey-wakey-eggs-and-bakey",
+        "name": "WAKEY, WAKEY, EGGS & BAKEY",
+        "description": "Dippy egg, choice of cheese and choice of bacon, sausage or ham",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 15,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "id": "item-7",
+        "name": "",
+        "description": "Deluxe toppings + $0.75 each",
+        "notes": [
+          "Sauteed mushrooms, jalapenos, grilled onions, green peppers, black olives & banana peppers",
+          "Premium toppings + $1.50 each",
+          "Bacon, spicy bacon, sausage, ham, fried portobello mushrooms, onion rings & dippy egg"
+        ]
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "title": "JUMBO WINGS",
+    "note": "Wing Nights - Tuesday 2pm-10pm & Thursday 7pm-10pm. (Eat in only, no to-go's)",
+    "items": [
+      {
+        "id": "half-or-whole-dozen",
+        "name": "HALF OR WHOLE DOZEN",
+        "description": "Add a celery boat for $2.00",
+        "price": {
+          "kind": "market"
+        }
+      },
+      {
+        "id": "sauce-tossed",
+        "name": "SAUCE TOSSED",
+        "description": "BBQ, garlic butter, garlic parmesan, honey garlic teriyaki, buffalo, garlic buffalo, honey hot, sweet chili, Nashville hot & Carolina reaper",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 2,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 3,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "black-truffle-buffalo-tossed",
+        "name": "BLACK TRUFFLE BUFFALO TOSSED",
+        "description": "Black truffle buffalo sauce, blue cheese crumbles & green onions",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 3,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 5,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "dry-rubs",
+        "name": "DRY RUBS",
+        "description": "Seasoned salt, mild dust, Cajun, cowboy butter, honey garlic & Nashville hot"
+      },
+      {
+        "id": "sauce-side",
+        "name": "SAUCE SIDE",
+        "description": "BBQ, garlic butter, garlic parmesan, honey garlic teriyaki, buffalo, garlic buffalo, honey hot, sweet chili, Nashville hot & Carolina reaper",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 2,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "black-truffle-buffalo-side",
+        "name": "BLACK TRUFFLE BUFFALO SIDE",
+        "description": "Black truffle buffalo sauce, blue cheese crumbles & green onions",
+        "price": {
+          "kind": "range",
+          "prices": [
+            {
+              "label": "Small",
+              "price": {
+                "amount": 2,
+                "currency": "USD"
+              }
+            },
+            {
+              "label": "Large",
+              "price": {
+                "amount": 4,
+                "currency": "USD"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "title": "FOR THE KIDS",
+    "note": "INCLUDES A KIDS DRINK",
+    "items": [
+      {
+        "id": "chicken-tenders-2",
+        "name": "CHICKEN TENDERS (2)",
+        "description": "Served with choice of homemade chips or applesauce.",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 8,
+            "currency": "USD"
+          }
+        },
+        "notes": [
+          "Upgrade to fries or tots for $1.00"
+        ]
+      },
+      {
+        "id": "jumbo-wings",
+        "name": "JUMBO WINGS",
+        "description": "3 Wings & 1 sauce",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 6,
+            "currency": "USD"
+          }
+        },
+        "notes": [
+          "See wing section for dry rubs & sauces"
+        ]
+      },
+      {
+        "id": "grilled-cheese",
+        "name": "GRILLED CHEESE",
+        "description": "Served with choice of homemade chips or applesauce.",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 6,
+            "currency": "USD"
+          }
+        },
+        "notes": [
+          "Upgrade to fries or tots for $1.00"
+        ]
+      },
+      {
+        "id": "mac-n-cheese",
+        "name": "MAC N' CHEESE",
+        "price": {
+          "kind": "single",
+          "price": {
+            "amount": 5,
+            "currency": "USD"
+          }
+        }
+      }
+    ]
+  }
+]
