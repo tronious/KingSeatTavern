@@ -6,10 +6,10 @@ export function HomePage() {
           <div className="hero__copy">
             <p className="eyebrow">Irwin, Pennsylvania</p>
             <h1>King Seat Tavern</h1>
-            <p className="lead">
+            {/* <p className="lead">
               A clean, mobile-friendly site for the tavern — menu, online ordering,
               and live bands.
-            </p>
+            </p> */}
 
             <div className="hero__actions">
               <a className="btn btn--primary" href="tel:7243927560">
