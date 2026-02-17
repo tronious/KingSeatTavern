@@ -392,6 +392,7 @@ a {
     height: auto;
     min-height: var(--nav-h);
     padding: 6px 0 10px;
+    container-type: inline-size;
   }
 
   .brand {
@@ -413,12 +414,12 @@ a {
     min-width: 0;
     font-family: var(--font-display);
     padding: 10px;
-    letter-spacing: 0.10em;
+    letter-spacing: 0.06em;
     font-weight: 900;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: clamp(1.3rem, 4.6vw, 1.55rem);
+    font-size: clamp(1.05rem, 4.2vw, 1.45rem);
     line-height: 1.05;
     color: #fff;
     text-transform: uppercase;
@@ -426,6 +427,20 @@ a {
     text-shadow:
       0 1px 0 rgba(0, 0, 0, 0.65),
       0 0 14px rgba(240, 180, 60, 0.22);
+  }
+
+  @container (max-width: 360px) {
+    .nav__siteTitle {
+      font-size: 1.02rem;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  @container (max-width: 330px) {
+    .nav__siteTitle {
+      font-size: 0.98rem;
+      letter-spacing: 0.04em;
+    }
   }
 
   .nav__siteTitle * {
@@ -1096,15 +1111,26 @@ h3 {
   font-weight: 700;
   color: rgba(11, 18, 32, 0.80);
   max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 720px) {
+  .menuItem__price {
+    white-space: normal;
+  }
 }
 
 .menuItem__desc {
   margin-top: 6px;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .menuItem__notes {
   margin: 10px 0 0;
   padding-left: 18px;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
