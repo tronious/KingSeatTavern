@@ -1,40 +1,71 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
+
+type BandInquiryFormValues = {
+  bandName: string
+  bandWebsite: string
+  rate: string
+  notes: string
+  company: string
+}
 
 export function BandsPage() {
-  const [bandName, setBandName] = useState('')
-  const [bandWebsite, setBandWebsite] = useState('')
-  const [rate, setRate] = useState('')
-  const [notes, setNotes] = useState('')
-  const [company, setCompany] = useState('')
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [error, setError] = useState<string | null>(null)
 
-  const canSubmit = useMemo(() => {
-    if (status === 'submitting') return false
-    return Boolean(bandName.trim() && rate.trim())
-  }, [bandName, rate, status])
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors, isSubmitting, isValid },
+  } = useForm<BandInquiryFormValues>({
+    defaultValues: {
+      bandName: '',
+      bandWebsite: '',
+      rate: '',
+      notes: '',
+      company: '',
+    },
+    mode: 'onChange',
+  })
 
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault()
+  const canSubmit = isValid && !isSubmitting
+
+  useEffect(() => {
+    const subscription = watch(() => {
+      if (status !== 'idle') setStatus('idle')
+      if (error) setError(null)
+    })
+    return () => subscription.unsubscribe()
+  }, [watch, status, error])
+
+  const onSubmit = handleSubmit(async (values) => {
     setError(null)
+    setStatus('idle')
 
-    if (!bandName.trim() || !rate.trim()) {
-      setStatus('error')
-      setError('Please enter your band name and rate.')
-      return
-    }
-
-    setStatus('submitting')
     try {
+      const bandName = values.bandName.trim()
+      const rate = values.rate.trim()
+      const bandWebsite = values.bandWebsite.trim()
+      const notes = values.notes.trim()
+      const company = values.company.trim()
+
+      if (!bandName || !rate) {
+        setStatus('error')
+        setError('Please enter your band name and rate.')
+        return
+      }
+
       const res = await fetch('/api/band-inquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          bandName: bandName.trim(),
-          bandWebsite: bandWebsite.trim() || null,
-          rate: rate.trim(),
-          notes: notes.trim() || null,
-          company: company.trim() || null,
+          bandName,
+          bandWebsite: bandWebsite || null,
+          rate,
+          notes: notes || null,
+          company: company || null,
         }),
       })
 
@@ -44,16 +75,12 @@ export function BandsPage() {
       }
 
       setStatus('success')
-      setBandName('')
-      setBandWebsite('')
-      setRate('')
-      setNotes('')
-      setCompany('')
+      reset()
     } catch (err) {
       setStatus('error')
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
     }
-  }
+  })
 
   return (
     <main className="section">
@@ -76,11 +103,17 @@ export function BandsPage() {
               <input
                 id="bandName"
                 className="input"
-                value={bandName}
-                onChange={(e) => setBandName(e.target.value)}
                 autoComplete="organization"
-                required
+                {...register('bandName', {
+                  required: 'Please enter your band name.',
+                  validate: (v) => (v.trim() ? true : 'Please enter your band name.'),
+                })}
               />
+              {errors.bandName ? (
+                <div className="help" role="alert" style={{ color: '#991b1b' }}>
+                  {errors.bandName.message}
+                </div>
+              ) : null}
             </div>
 
             <div className="field">
@@ -90,11 +123,10 @@ export function BandsPage() {
               <input
                 id="bandWebsite"
                 className="input"
-                value={bandWebsite}
-                onChange={(e) => setBandWebsite(e.target.value)}
                 placeholder="https://…"
                 inputMode="url"
                 autoComplete="url"
+                {...register('bandWebsite')}
               />
               <div className="help muted">Optional — website, Facebook, or EPK link.</div>
             </div>
@@ -106,11 +138,17 @@ export function BandsPage() {
               <input
                 id="rate"
                 className="input"
-                value={rate}
-                onChange={(e) => setRate(e.target.value)}
                 placeholder="$400, $500, Negotiable…"
-                required
+                {...register('rate', {
+                  required: 'Please enter your rate.',
+                  validate: (v) => (v.trim() ? true : 'Please enter your rate.'),
+                })}
               />
+              {errors.rate ? (
+                <div className="help" role="alert" style={{ color: '#991b1b' }}>
+                  {errors.rate.message}
+                </div>
+              ) : null}
             </div>
 
             <div className="field">
@@ -120,10 +158,9 @@ export function BandsPage() {
               <textarea
                 id="notes"
                 className="textarea"
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
                 placeholder="Dates available, genre, lineup, set length, etc."
                 rows={5}
+                {...register('notes')}
               />
             </div>
 
@@ -136,8 +173,7 @@ export function BandsPage() {
                 className="input"
                 tabIndex={-1}
                 autoComplete="off"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
+                {...register('company')}
               />
             </div>
 
@@ -155,7 +191,7 @@ export function BandsPage() {
 
             <div style={{ marginTop: 12, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               <button className="btn btn--primary" type="submit" disabled={!canSubmit}>
-                {status === 'submitting' ? 'Sending…' : 'Submit'}
+                {isSubmitting ? 'Sending…' : 'Submit'}
               </button>
               <a className="btn btn--ghost" href="mailto:THEKINGSEATLLC@GMAIL.COM">
                 Email instead
