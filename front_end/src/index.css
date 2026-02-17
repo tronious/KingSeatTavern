@@ -454,9 +454,9 @@ a {
     justify-self: center;
     text-align: center;
     margin-top: 0;
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: 0.18em;
-    font-size: 1.1rem;
+    font-size: 2rem;
     line-height: 1;
     color: var(--brand);
     white-space: nowrap;
