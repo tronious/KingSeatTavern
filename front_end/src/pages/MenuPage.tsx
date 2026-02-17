@@ -99,16 +99,16 @@ export function MenuPage() {
               {/* <h1>Menu</h1> */}
               {/* <p className="muted">Tap a category to jump.</p> */}
             </div>
-            <div className="menuHeader__meta muted">
+            {/* <div className="menuHeader__meta muted">
               {menu.updatedAt ? `Updated ${menu.updatedAt}` : null}
-            </div>
+            </div> */}
           </div>
         </div>
 
-        <div className="menuNavBand"  style={{display:'flex', flexDirection: 'column', background:'white'}} aria-label="Menu categories">
+        <div className="menuNavBand"  style={{display:'flex', flexDirection: 'column', background:'rgba(0,0,0,1)'}} aria-label="Menu categories">
           <div className="container">
             <div className="menuJump" aria-label="Jump to a menu section">
-              <label className="menuJump__label" style={{color:'black'}} htmlFor="menuJump">
+              <label className="menuJump__label" style={{color:'white'}} htmlFor="menuJump">
                 Jump to:
               </label>
               <select ref={menuJumpSelect} className="menuJump__select" value={jumpTo} onChange={handleMenuSectionChange}>
