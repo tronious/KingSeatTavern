@@ -53,35 +53,6 @@ export function HomePage() {
           </div>
           <div className="homeTwoCol" aria-label="Facebook and upcoming events">
             <div>
-              <div className="section__header">
-                <h2>Latest on Facebook</h2>
-                {/* <p className="muted">Updates straight from The King Seat Tavern.</p> */}
-              </div>
-
-              <div className="fbEmbed" aria-label="Facebook timeline embed">
-                <iframe
-                  title="King Seat Tavern on Facebook"
-                  src={facebookPluginSrc}
-                  width="500"
-                  height="650"
-                  style={{ border: 'none', overflow: 'hidden' }}
-                  scrolling="no"
-                  frameBorder={0}
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
-
-              {/* <p className="muted" style={{ marginTop: 12 }}>
-                Prefer the native app?{' '}
-                <a className="link" href={facebookPageUrl} target="_blank" rel="noreferrer">
-                  View the page on Facebook
-                </a>
-                .
-              </p> */}
-            </div>
-
-            <div>
               <div className="section__header section__header--centerMobile">
                 <h2>
                   <span className="eventsBurst" aria-label="Upcoming Events">
@@ -109,6 +80,34 @@ export function HomePage() {
                 </a>
                 .
               </p>
+            </div>
+            <div>
+              <div className="section__header">
+                <h2>Latest on Facebook</h2>
+                {/* <p className="muted">Updates straight from The King Seat Tavern.</p> */}
+              </div>
+
+              <div className="fbEmbed" aria-label="Facebook timeline embed">
+                <iframe
+                  title="King Seat Tavern on Facebook"
+                  src={facebookPluginSrc}
+                  width="500"
+                  height="650"
+                  style={{ border: 'none', overflow: 'hidden' }}
+                  scrolling="no"
+                  frameBorder={0}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+
+              {/* <p className="muted" style={{ marginTop: 12 }}>
+                Prefer the native app?{' '}
+                <a className="link" href={facebookPageUrl} target="_blank" rel="noreferrer">
+                  View the page on Facebook
+                </a>
+                .
+              </p> */}
             </div>
           </div>
         </div>

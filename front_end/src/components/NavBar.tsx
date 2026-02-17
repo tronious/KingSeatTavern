@@ -69,17 +69,20 @@ export function NavBar() {
   return (
     <header className="nav" ref={headerRef}>
       <div className="container nav__inner">
-        <div className="nav__center" aria-label={`Current page ${pageTitle}`}>
-          <div className="nav__siteTitle">King Seat Tavern</div>
-          <h1 className="nav__pageTitle" style={{fontSize: '1.4rem'}}>{pageTitle}</h1>
-        </div>
-
         <NavLink to="/" className="brand" aria-label="King Seat Tavern">
           <span className="brand__mark" aria-hidden="true">
             <img className="brand__logo" src={ksLogo} alt="" />
           </span>
           <span className="brand__text">King Seat Tavern</span>
         </NavLink>
+
+        <div className="nav__siteTitle nav__mobileOnly" aria-label="King Seat Tavern">
+          KING SEAT TAVERN
+        </div>
+
+        <div className="nav__pageTitle nav__mobileOnly" aria-label={`Current page ${pageTitle}`}>
+          {pageTitle}
+        </div>
 
         <nav className="nav__links" aria-label="Primary navigation">
           {navItems.map((item) => (
