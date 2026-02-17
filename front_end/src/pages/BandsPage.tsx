@@ -57,7 +57,7 @@ export function BandsPage() {
 
   return (
     <main className="section">
-      <div className="container">
+      <div className="container" style={{opacity: 0.7}}>
         {/* <h1>Bands Booking Request</h1>
  */}
         <div className="section__header">
