@@ -1,4 +1,5 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { NavBar } from './components/NavBar'
 import { BandsPage } from './pages/BandsPage'
 import { ContactPage } from './pages/ContactPage'
@@ -8,9 +9,22 @@ import { MenuPage } from './pages/MenuPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { OrderOnlinePage } from './pages/OrderOnlinePage'
 
+function ScrollToTopOnRouteChange() {
+  const { pathname } = useLocation()
+
+  // Only react to actual route changes (pathname), not hash updates.
+  // Keeps Menu in-page section jumps working.
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [pathname])
+
+  return null
+}
+
 export default function App() {
   return (
     <div className="app">
+      <ScrollToTopOnRouteChange />
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
