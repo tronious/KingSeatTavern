@@ -1,6 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import ksLogo from '../assets/KSLogo.jpg'
 
 const navItems = [
   { to: '/', label: 'Home' },
@@ -69,16 +68,18 @@ export function NavBar() {
   return (
     <header className="nav" ref={headerRef}>
       <div className="container nav__inner">
-        <NavLink to="/" className="brand" aria-label="King Seat Tavern">
+        {/* <NavLink to="/" className="brand" aria-label="King Seat Tavern">
           <span className="brand__mark" aria-hidden="true">
             <img className="brand__logo" src={ksLogo} alt="" />
           </span>
           <span className="brand__text">King Seat Tavern</span>
-        </NavLink>
+        </NavLink> */}
 
-        <div className="nav__siteTitle nav__mobileOnly" aria-label="King Seat Tavern">
+        {/* <div className="nav__siteTitle nav__mobileOnly" aria-label="King Seat Tavern">
           KING SEAT TAVERN
-        </div>
+        </div> */}
+
+        <div className="nav__spacer nav__mobileOnly" aria-hidden="true" />
 
         <div className="nav__pageTitle nav__mobileOnly" aria-label={`Current page ${pageTitle}`}>
           {pageTitle}

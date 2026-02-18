@@ -23,7 +23,7 @@ export function ContactPage() {
             <p className="card__text">4022 Route 130, Irwin, PA 15642</p>
             <a
               className="btn btn--ghost"
-              href="https://maps.google.com/maps?ll=40.34576,-79.58429&z=14&t=m&hl=en-US&gl=US&mapclient=apiv3"
+              href="https://maps.app.goo.gl/ZFSdFsAaLgSgVSxe6"
               target="_blank"
               rel="noreferrer"
             >

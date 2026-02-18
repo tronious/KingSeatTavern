@@ -1,10 +1,11 @@
 export function EventsPage() {
-  const facebookPageUrl = 'https://www.facebook.com/profile.php?id=61554632729226'
+  // Use a Page URL format that the Facebook Page Plugin reliably renders.
+  const facebookPageUrl = 'https://www.facebook.com/175575592312343'
   const facebookPluginSrc =
     'https://www.facebook.com/plugins/page.php' +
     `?href=${encodeURIComponent(facebookPageUrl)}` +
     '&tabs=events' +
-    '&width=500' +
+    '&width=360' +
     '&height=650' +
     '&small_header=true' +
     '&adapt_container_width=true' +
@@ -23,7 +24,7 @@ export function EventsPage() {
           <iframe
             title="King Seat Tavern events on Facebook"
             src={facebookPluginSrc}
-            width="500"
+            width="360"
             height="650"
             style={{ border: 'none', overflow: 'hidden' }}
             scrolling="no"
