@@ -6,6 +6,7 @@ import { ContactPage } from './pages/ContactPage'
 import { EventsPage } from './pages/EventsPage'
 import { HomePage } from './pages/HomePage'
 import { MenuPage } from './pages/MenuPage'
+import { MobileBarPage } from './pages/MobileBar'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { OrderOnlinePage } from './pages/OrderOnlinePage'
 
@@ -29,6 +30,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/menu" element={<MenuPage />} />
+        <Route path="/mobile-bar" element={<MobileBarPage />} />
         <Route path="/order-online" element={<OrderOnlinePage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/bands" element={<BandsPage />} />

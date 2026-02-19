@@ -6,6 +6,7 @@ const navItems = [
   { to: '/menu', label: 'Menu' },
   { to: '/order-online', label: 'Order' },
   { to: '/events', label: 'Events' },
+  { to: '/mobile-bar', label: 'Mobile Bar' },
   { to: '/bands', label: 'Bands' },
 ] as const
 
@@ -19,6 +20,7 @@ export function NavBar() {
   const pageTitle = (() => {
     if (pathname === '/' || pathname === '') return 'HOME'
     if (pathname.startsWith('/menu')) return 'MENU'
+    if (pathname.startsWith('/mobile-bar')) return 'MOBILE BAR'
     if (pathname.startsWith('/order-online')) return 'ORDER ONLINE'
     if (pathname.startsWith('/events')) return 'EVENTS'
     if (pathname.startsWith('/bands')) return 'BANDS'

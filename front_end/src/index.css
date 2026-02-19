@@ -571,6 +571,18 @@ a {
   }
 }
 
+@media (min-width: 641px) {
+  .section__header--rightDesktop {
+    justify-items: end;
+    text-align: right;
+  }
+
+  .fbEmbed.fbEmbed--rightDesktop {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
 .hero__inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -646,6 +658,64 @@ h3 {
   border-radius: 18px;
   box-shadow: var(--shadow);
   padding: 18px;
+}
+
+/* Mobile Bar page */
+.mobileBar {
+  display: grid;
+  gap: 16px;
+}
+
+.mobileBar__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(240, 180, 60, 0.22);
+}
+
+.mobileBar__lead {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+}
+
+.mobileBar__text {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 500;
+}
+
+.mobileBar__bullets {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.mobileBar__bullets li {
+  margin: 6px 0;
+}
+
+.mobileBar__cta {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(240, 180, 60, 0.16);
+}
+
+.mobileBar__ctaLabel {
+  color: rgba(240, 180, 60, 0.92);
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mobileBar__phone {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
 }
 
 /* Home: Facebook + Events */

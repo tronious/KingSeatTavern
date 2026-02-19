@@ -156,12 +156,12 @@ export function HomePage() {
               </p>
             </div>
             <div>
-              <div className="section__header section__header--centerMobile">
+              <div className="section__header section__header--centerMobile section__header--rightDesktop">
                 <h2 style={{color:'white', fontSize:'1.6rem'}}>Latest on Facebook</h2>
                 {/* <p className="muted">Updates straight from The King Seat Tavern.</p> */}
               </div>
 
-              <div ref={fbEmbedRef} className="fbEmbed" aria-label="Facebook timeline embed">
+              <div ref={fbEmbedRef} className="fbEmbed fbEmbed--rightDesktop" aria-label="Facebook timeline embed">
                 <iframe
                   title="King Seat Tavern on Facebook"
                   src={facebookPluginSrc}
