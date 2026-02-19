@@ -153,7 +153,7 @@ export function MenuPage() {
               </div>
             ) : (
               <div className="card">
-                <p className="muted" style={{ margin: 0 }}>
+                <p className="muted">
                   No items yet. Add items in <span className="link">src/data/menu.ts</span>.
                 </p>
               </div>

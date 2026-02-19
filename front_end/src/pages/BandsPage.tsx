@@ -88,7 +88,7 @@ export function BandsPage() {
         {/* <h1>Bands Booking Request</h1>
  */}
         <div className="section__header">
-          <p className="muted" style={{fontWeight:'500', fontSize:'1.4rem', fontFamily: "Cinzel, ui-serif, Georgia, 'Times New Roman', Times, serif"}}>
+          <p className="muted" style={{fontWeight:'500', fontSize:'1.4rem', fontFamily: "Cinzel, ui-serif, Georgia, 'Times New Roman', Times, serif", paddingLeft:'6px', paddingRight:'6px', paddingTop:'0px', marginTop:'2px', marginBottom:'2px'}}>
             Want to play at King Seat Tavern? Send your details and we’ll reach out.
           </p>
         </div>
@@ -145,7 +145,7 @@ export function BandsPage() {
                 })}
               />
               {errors.rate ? (
-                <div className="help" role="alert" style={{ color: '#991b1b' }}>
+                <div className="help" role="alert" style={{ color: '#ff4444' }}>
                   {errors.rate.message}
                 </div>
               ) : null}

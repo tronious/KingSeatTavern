@@ -113,11 +113,11 @@ export function HomePage() {
           </div>
 
           <div className="homeQuickActions" aria-label="Quick actions">
-            <Link className="eventsBurst eventsBurst--static homeQuickActions__menu" to="/menu" aria-label="View menu">
+            <Link className="btn homeQuickActions__btn homeQuickActions__menu" to="/menu" aria-label="View menu">
               MENU
             </Link>
             <a
-              className="btn btn--ghost homeQuickActions__call"
+              className="btn homeQuickActions__btn homeQuickActions__call"
               href="tel:7243927506"
               aria-label="Call 724-392-7506"
             >
@@ -129,7 +129,7 @@ export function HomePage() {
             <div>
               <div className="section__header section__header--centerMobile">
                 <h2>
-                  <span style={{color:'white', fontSize:'2rem'}} aria-label="Upcoming Events">
+                  <span style={{color:'white', fontSize:'1.6rem'}} aria-label="Upcoming Events">
                     Upcoming Events
                   </span>
                 </h2>
@@ -157,7 +157,7 @@ export function HomePage() {
             </div>
             <div>
               <div className="section__header section__header--centerMobile">
-                <h2 style={{color:'white', fontSize:'2rem'}}>Latest on Facebook</h2>
+                <h2 style={{color:'white', fontSize:'1.6rem'}}>Latest on Facebook</h2>
                 {/* <p className="muted">Updates straight from The King Seat Tavern.</p> */}
               </div>
 
